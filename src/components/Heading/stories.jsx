@@ -8,6 +8,7 @@ export default {
   },
   argTypes: {
     children: { type: "string" },
+    light: { type: "boolean" },
   },
   backgrounds: {
     default: "blackTheme",
