@@ -20,4 +20,8 @@ export const theme = {
       xhuge: "6.4rem",
     },
   },
+  media: {
+    small: "(max-width: 768px)",
+    medium: "(max-width: 768px)",
+  },
 };

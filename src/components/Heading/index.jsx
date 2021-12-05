@@ -5,7 +5,7 @@ export function Heading({
   children,
   isLight = false,
   as = "h1",
-  size = "big",
+  size = "huge",
   uppercase = false,
 }) {
   return (
@@ -17,8 +17,8 @@ export function Heading({
 
 Heading.propTypes = {
   children: P.node.isRequired,
-  isLight: P.bool.isRequired,
-  as: P.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]).isRequired,
-  size: P.oneOf(["small", "medium", "big", "huge"]).isRequired,
-  uppercase: P.bool.isRequired,
+  isLight: P.bool,
+  as: P.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]),
+  size: P.oneOf(["small", "medium", "big", "huge"]),
+  uppercase: P.bool,
 };
