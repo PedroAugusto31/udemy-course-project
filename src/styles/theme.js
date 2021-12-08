@@ -21,7 +21,7 @@ export const theme = {
     },
   },
   media: {
-    small: "(max-width: 768px)",
+    small: "(max-width: 526px)",
     medium: "(max-width: 768px)",
   },
 };

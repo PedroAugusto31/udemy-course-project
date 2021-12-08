@@ -22,12 +22,43 @@ describe("<Heading />", () => {
       color: theme.colors.blackTheme,
     });
   });
-  it("should render Heading on small size", () => {
+  it("should render Heading correctly wher small", () => {
     renderTheme(<Heading size="small">olá</Heading>);
 
     const heading = screen.getByRole("heading", { name: "olá" });
-    expect(heading).toHaveStyle({
-      "font-size": theme.font.sizes.medium,
+    expect(heading).toHaveStyle({ "font-size": theme.font.sizes.medium });
+  });
+  it("should render Heading correctly wher medium", () => {
+    renderTheme(<Heading size="medium">olá</Heading>);
+
+    const heading = screen.getByRole("heading", { name: "olá" });
+    expect(heading).toHaveStyle({ "font-size": theme.font.sizes.large });
+  });
+  it("should render Heading correctly wher big", () => {
+    renderTheme(<Heading size="big">olá</Heading>);
+
+    const heading = screen.getByRole("heading", { name: "olá" });
+    expect(heading).toHaveStyle({ "font-size": theme.font.sizes.xlarge });
+  });
+  it("should render Heading correctly wher using mobile", () => {
+    renderTheme(<Heading size="huge">olá</Heading>);
+
+    const heading = screen.getByRole("heading", { name: "olá" });
+    expect(heading).toHaveStyleRule("font-size", theme.font.sizes.xlarge, {
+      media: theme.media.medium,
     });
+  });
+  it("should render Heading correctly wher using mobile", () => {
+    renderTheme(<Heading uppercase>olá</Heading>);
+
+    const heading = screen.getByRole("heading", { name: "olá" });
+    expect(heading).toHaveStyle({ "text-transform": "uppercase" });
+  });
+  it("should render correct heading element", () => {
+    const { container } = renderTheme(<Heading as="h2">olá</Heading>);
+    const heading = screen.getByRole("heading", { name: "olá" });
+
+    const h6 = container.querySelector("h2");
+    expect(h6.tagName.toLocaleLowerCase()).toBe("h2");
   });
 });
