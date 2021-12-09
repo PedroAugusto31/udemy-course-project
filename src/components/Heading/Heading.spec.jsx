@@ -61,4 +61,27 @@ describe("<Heading />", () => {
     const h6 = container.querySelector("h2");
     expect(h6.tagName.toLocaleLowerCase()).toBe("h2");
   });
+  it("should match snapshot", () => {
+    const { container } = renderTheme(<Heading as="h2">olá</Heading>);
+
+    expect(container.firstChild).toMatchInlineSnapshot(`
+      .c0 {
+        color: #5290E3;
+        font-size: 6.4rem;
+        text-transform: none;
+      }
+
+      @media (max-width:768px) {
+        .c0 {
+          font-size: 4.0rem;
+        }
+      }
+
+      <h2
+        class="c0"
+      >
+        olá
+      </h2>
+    `);
+  });
 });
