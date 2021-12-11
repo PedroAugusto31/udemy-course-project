@@ -19,7 +19,7 @@ describe("<Heading />", () => {
 
     const heading = screen.getByRole("heading", { name: "olá" });
     expect(heading).toHaveStyle({
-      color: theme.colors.blackTheme,
+      color: theme.colors.secondary,
     });
   });
   it("should render Heading correctly wher small", () => {

@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
 
  body {
    ${({ theme }) => css`
-     background: ${theme.colors.blackTheme};
+     background: ${theme.colors.secondary};
    `}
    font-size: 1.6rem;
    font-family: 'Open Sans', sans-serif;
