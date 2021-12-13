@@ -5,21 +5,21 @@ import { theme } from "../../styles/theme";
 
 describe("<Heading />", () => {
   it("should render Heading with default values", () => {
-    const { debug } = renderTheme(<Heading>olá</Heading>);
+    renderTheme(<Heading>olá</Heading>);
 
     const heading = screen.getByRole("heading", { name: "olá" });
     expect(heading).toHaveStyle({
-      color: theme.colors.mainColor,
+      color: theme.colors.secondary,
       "font-size": theme.font.sizes.xhuge,
       "text-transform": "none",
     });
   });
   it("should render Heading on white theme", () => {
-    renderTheme(<Heading isLight={true}>olá</Heading>);
+    const { debug } = renderTheme(<Heading isLight>olá</Heading>);
 
     const heading = screen.getByRole("heading", { name: "olá" });
     expect(heading).toHaveStyle({
-      color: theme.colors.secondary,
+      color: theme.colors.primary,
     });
   });
   it("should render Heading correctly wher small", () => {
@@ -66,7 +66,7 @@ describe("<Heading />", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {
-        color: #5290E3;
+        color: #323232;
         font-size: 6.4rem;
         text-transform: none;
       }
