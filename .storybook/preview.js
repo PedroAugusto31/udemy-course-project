@@ -15,7 +15,7 @@ export const parameters = {
     values: [
       {
         name: "light",
-        value: theme.colors.primary,
+        value: theme.colors.white,
       },
       {
         name: "light-blue",
@@ -23,7 +23,7 @@ export const parameters = {
       },
       {
         name: "dark",
-        value: theme.colors.secondary,
+        value: theme.colors.primary,
       },
     ],
   },
