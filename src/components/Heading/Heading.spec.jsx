@@ -9,7 +9,7 @@ describe("<Heading />", () => {
 
     const heading = screen.getByRole("heading", { name: "olá" });
     expect(heading).toHaveStyle({
-      color: theme.colors.secondary,
+      color: theme.colors.primary,
       "font-size": theme.font.sizes.xhuge,
       "text-transform": "none",
     });
@@ -19,7 +19,7 @@ describe("<Heading />", () => {
 
     const heading = screen.getByRole("heading", { name: "olá" });
     expect(heading).toHaveStyle({
-      color: theme.colors.primary,
+      color: theme.colors.white,
     });
   });
   it("should render Heading correctly wher small", () => {
@@ -66,7 +66,7 @@ describe("<Heading />", () => {
 
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {
-        color: #323232;
+        color: #0A1128;
         font-size: 6.4rem;
         text-transform: none;
       }

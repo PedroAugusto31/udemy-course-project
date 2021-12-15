@@ -6,8 +6,13 @@ export default {
   args: {
     children: (
       <div>
-        <h1>SectionContainer</h1>
-        <p>ta maluco da cabess</p>
+        <h1>SectionBackground</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis
+          cupiditate eius eveniet accusamus tempora ex? Autem est eveniet
+          adipisci quasi natus. Voluptatum sunt ratione nobis architecto alias
+          velit sequi temporibus?
+        </p>
       </div>
     ),
   },

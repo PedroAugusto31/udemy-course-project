@@ -3,8 +3,17 @@ import { SectionBackground } from ".";
 import { renderTheme } from "../../utils/renderTheme";
 
 describe("<SectionBackground />", () => {
-  it("Should do something", () => {
-    renderTheme(<SectionBackground>Children</SectionBackground>);
+  it("Should render with correct background dark", () => {
+    const { container } = renderTheme(
+      <SectionBackground background>Children</SectionBackground>,
+    );
     expect(screen.getByText("Children")).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+  it("Should render with background light", () => {
+    const { container } = renderTheme(
+      <SectionBackground>Children</SectionBackground>,
+    );
+    expect(container.firstChild).toBeInTheDocument();
   });
 });
