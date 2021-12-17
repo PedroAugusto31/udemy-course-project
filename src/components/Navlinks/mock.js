@@ -29,4 +29,24 @@ export default [
     link: "#target6",
     newTab: true,
   },
+  {
+    children: "Link 7",
+    link: "#target7",
+    newTab: true,
+  },
+  {
+    children: "Link 8",
+    link: "#target8",
+    newTab: true,
+  },
+  {
+    children: "Link 9",
+    link: "#target9",
+    newTab: true,
+  },
+  {
+    children: "Link 10",
+    link: "#target10",
+    newTab: true,
+  },
 ];
