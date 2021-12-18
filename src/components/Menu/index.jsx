@@ -14,7 +14,7 @@ export function Menu({ links = [], logoData }) {
     <>
       <Styled.MenuButton
         visible={menuVisible}
-        onClick={() => setMenuVisible(true)}
+        onClick={() => setMenuVisible((visible) => !visible)}
         aria-label="Open/Close menu"
       >
         {menuVisible ? (
