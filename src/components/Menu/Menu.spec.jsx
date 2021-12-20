@@ -38,6 +38,11 @@ describe("<Menu />", () => {
       media: theme.media.medium,
     });
     expect(screen.getByLabelText("Close menu")).toBeInTheDocument();
+    fireEvent.click(menuContainer);
+    expect(menuContainer).toHaveStyleRule("opacity", "0", {
+      media: theme.media.medium,
+    });
+    expect(screen.getByLabelText("Open menu")).toBeInTheDocument();
   });
   it("Should not render links", () => {
     renderTheme(<Menu logoData={logoData} />);

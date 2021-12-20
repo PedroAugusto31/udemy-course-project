@@ -8,4 +8,10 @@ describe("<GridContent />", () => {
     const { container } = renderTheme(<GridContent {...mockShow} />);
     expect(container.firstChild).toMatchSnapshot();
   });
+  it("should render without background", () => {
+    const { container } = renderTheme(
+      <GridContent {...mockShow} background={undefined} />,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });
