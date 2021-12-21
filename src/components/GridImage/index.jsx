@@ -4,37 +4,34 @@ import { SectionBackground } from "../SectionBackground";
 import { Heading } from "../Heading";
 import { TextComponent } from "../TextComponent";
 
-export function GridText({ title, description, grid, background = false }) {
+export function GridImage({ background = false, title, description, grid }) {
   return (
     <SectionBackground background={background}>
       <Styled.Container>
-        <Heading uppercase isLight={background} as="h2">
+        <Heading as="h2" isLight={background}>
           {title}
         </Heading>
         <TextComponent>{description}</TextComponent>
-        <Styled.Grid>
-          {grid.map((elem) => (
-            <Styled.GridElement key={elem.title}>
-              <Heading size="medium" isLight={background} as="h3">
-                {elem.title}
-              </Heading>
-              <TextComponent>{elem.description}</TextComponent>
+        <Styled.ImageGrid>
+          {grid.map((img) => (
+            <Styled.GridElement key={img.altText}>
+              <Styled.Image src={img.srcImg} alt={img.altText} />
             </Styled.GridElement>
           ))}
-        </Styled.Grid>
+        </Styled.ImageGrid>
       </Styled.Container>
     </SectionBackground>
   );
 }
 
-GridText.propTypes = {
+GridImage.propTypes = {
+  background: P.bool,
   title: P.string.isRequired,
   description: P.string.isRequired,
   grid: P.arrayOf(
     P.shape({
-      title: P.string.isRequired,
-      description: P.string.isRequired,
+      altText: P.string.isRequired,
+      srcImg: P.string.isRequired,
     }),
   ).isRequired,
-  background: P.bool,
 };
