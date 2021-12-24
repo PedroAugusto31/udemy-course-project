@@ -1,5 +1,5 @@
 import { Heading } from "../../components/Heading";
-import { mockBase } from "../BaseTemplate/stories";
+import mockBase from "../BaseTemplate/mock";
 import * as Styled from "./styles";
 import { BaseTemplate } from "../BaseTemplate";
 
