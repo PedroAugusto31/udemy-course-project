@@ -1,7 +1,10 @@
+import { mapMenu } from "./map-menu";
+import { mapSection } from "./map-section";
+
 export const mapData = (pagesData = [{}]) => {
   return pagesData.map((data) => {
     const {
-      footer_text = "",
+      footer_text: footerHtml = "",
       slug = "",
       title = "",
       sections = [],
@@ -9,15 +12,15 @@ export const mapData = (pagesData = [{}]) => {
     } = data;
 
     return {
-      footerHtml: footer_text,
-      slug: slug,
-      title: title,
-      sections: sections,
-      menu: menu,
+      footerHtml,
+      slug,
+      title,
+      sections: mapSection(sections),
+      menu: mapMenu(menu),
     };
   });
 };
 
-const { inspect } = require("util");
-const dados = require("./dados.json");
-console.log(inspect(mapData(dados), null, null, true));
+// const { inspect } = require("util");
+// const dados = require("./dados.json");
+// console.log(inspect(mapData(dados), null, null, true));
