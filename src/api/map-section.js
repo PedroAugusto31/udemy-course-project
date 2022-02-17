@@ -16,6 +16,7 @@ export function mapSection(sections = []) {
         return mapImageGrid(section);
       }
     }
+    return section;
   });
 }
 
