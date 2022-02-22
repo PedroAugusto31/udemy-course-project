@@ -14,6 +14,9 @@ export const ImageGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${theme.spacings.small};
+    @media ${theme.media.medium} {
+      grid-template-columns: 1fr;
+    }
   `}
 `;
 
