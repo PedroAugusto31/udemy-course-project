@@ -11,11 +11,15 @@ import { mapData } from "../../api/map-data";
 import { useState } from "react";
 import { PageNotFound } from "../PageNotFound";
 import { Loading } from "../Loading";
+import { useLocation } from "react-router-dom";
 
 export function Home() {
   const [data, setData] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
+    const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, "");
+    const slug = pathName ? pathName : "landing-page";
     const load = async () => {
       try {
         await new Promise((r) => setTimeout(r, 2500));
@@ -27,7 +31,7 @@ export function Home() {
       }
     };
     load();
-  }, []);
+  }, [location]);
 
   if (data === undefined) {
     return <PageNotFound />;
