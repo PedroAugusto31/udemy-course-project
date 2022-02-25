@@ -30,5 +30,7 @@ export const ImageContainer = styled.div`
   ${({ theme }) => css``}
 `;
 export const Image = styled.img`
-  ${({ theme }) => css``}
+  ${({ theme }) => css`
+    width: 100%;
+  `}
 `;
